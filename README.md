@@ -11,7 +11,7 @@
     conda activate mario-env
     ```
 
-4.  If your shell is not properly configured to use `conda activate`, it may be there is a source line in your bash scripts that has to explicitly reference your conda installation path. You can reference your conda installation path       with the following: 
+4.  If your shell is not properly configured to use `conda activate`, it may be a source line in your bash scripts that has to explicitly reference your conda installation path. You can reference your conda installation path       with the following: 
     ```
     CONDA_PREFIX=$(conda info --base)
     source $CONDA_PREFIX/etc/profile.d/conda.sh
@@ -35,7 +35,7 @@ This visualizes Mario playing the game in a window. Performance metrics will be 
 
 ## Project Structure
 **train.py**
-Training script that loops between Environment and Mario
+Training script that loops between the environment and the Mario agent.
 
 **agent.py**
 Defines a `Mario` class that helps the agent collect experiences, make actions given observations and updates the action policy.
@@ -44,7 +44,7 @@ Defines a `Mario` class that helps the agent collect experiences, make actions g
 Defines environment pre-processing logic, including observation resizing, rgb to grayscale, etc.
 
 **net.py**
-Define Q-value estimators with a CNN.
+Define Q-value estimators with a Convolutional Neural Network.
 
 **metrics.py**
 Defines a `MetricLogger` class that helps track training/evaluation performance.
