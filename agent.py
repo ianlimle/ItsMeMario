@@ -8,21 +8,30 @@ from collections import deque
 
 # create a class Mario to represent the agent in the game
 class Mario:
-    def __init__(self, state_dim, action_dim, save_dir, checkpoint=None):
+    def __init__(self, 
+                state_dim, 
+                action_dim, 
+                save_dir, 
+                memory, 
+                exploration_rate_decay,
+                learn_every,
+                sync_every,
+                checkpoint=None):
+
         self.state_dim = state_dim
         self.action_dim = action_dim
-        self.memory = config.MEMORY
+        self.memory = deque(maxlen=memory)
         self.batch_size = config.BATCH_SIZE
 
         self.exploration_rate = config.EXPLORATION_RATE
-        self.exploration_rate_decay = config.EXPLORATION_RATE_DECAY
+        self.exploration_rate_decay = exploration_rate_decay
         self.exploration_rate_min = config.EXPLORATION_RATE_MIN
         self.gamma = config.GAMMA
 
         self.curr_step = config.CURR_STEP
         self.burnin = config.BURNIN  # min. experiences before training
-        self.learn_every = config.LEARN_EVERY   # no. of experiences between updates to Q_online
-        self.sync_every = config.SYNC_EVERY   # no. of experiences between Q_target & Q_online sync
+        self.learn_every = learn_every   # no. of experiences between updates to Q_online
+        self.sync_every = sync_every   # no. of experiences between Q_target & Q_online sync
 
         self.save_every = config.SAVE_EVERY   # no. of experiences between saving Mario Net
         self.save_dir = save_dir
