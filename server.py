@@ -29,6 +29,7 @@ class startTraining(Resource):
                 '--exploration_rate_decay', args['exploration_rate_decay'],
                 '--learn_every', args['learn_every'],
                 '--sync_every', args['sync_every'],
+                '--episodes', args['episodes'],
                 ]
             )
             return jsonify({"data": "Starting training process for Mario ...",
