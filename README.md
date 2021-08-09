@@ -28,9 +28,10 @@ This starts the *double Q-learning* and logs key training metrics to `checkpoint
 
 To **evaluate** a trained Mario,
 ```
-python evaluate.py
+python test.py \
+--checkpoint [PATH/TO/YOUR/CHECKPOINT/FILE]
 ```
-This visualizes Mario playing the game in a window. Performance metrics will be logged to a new folder under `checkpoints`. Change the `load_dir`, e.g. `checkpoints/2021-08-06T22-00-00`, in `Mario.load()` to check a specific timestamp.
+This visualizes Mario playing the game in a window. Performance metrics will be logged to a new folder under `checkpoints`. Change the `--checkpoint`, e.g. `checkpoints/2021-08-06T22-00-00/mario_net_1.chkpt` to check a specific timestamp.
 
 
 ## Project Structure
@@ -61,7 +62,7 @@ Defines a `MetricLogger` class that helps track training/evaluation performance.
 
 ## Pre-trained
 
-Checkpoint for a trained Mario: [INSERT LINK FOR SHARING TRAINED CHECKPOINT?]
+Checkpoints folder for a trained Mario agent: https://drive.google.com/drive/folders/11e0kPqND14o1LITcmo-3-iLtkOPJUxt6?usp=sharing
 
 ## Resources
 
