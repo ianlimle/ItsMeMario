@@ -17,7 +17,7 @@ class startTraining(Resource):
     def __init__(self):
         super(startTraining, self).__init__()
 
-    @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
+    @cross_origin(origin='*', headers=['Content-Type'])
     def post(self):
         try:
             args = request.get_json()
