@@ -78,7 +78,7 @@ Define packages/dependencies required for the environment to be installed and ru
 Defines a `MetricLogger` class that helps track training/evaluation performance.
 
 **net.py**
-Define Q-value estimators with a Convolutional Neural Network.
+Define Q-value estimators with a Convolutional Neural Network based `MarioNet` class.
 
 **server.py**
 Flask server with endpoints for serving the GUI to run the training and evaluation scripts.
