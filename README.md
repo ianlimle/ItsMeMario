@@ -42,21 +42,55 @@ python test.py \
 This visualizes Mario playing the game in a window. Performance metrics will be logged to a new folder under `checkpoints`. Change the `--checkpoint`, e.g. `checkpoints/2021-08-06T22-00-00/mario_net_1.chkpt` to check a specific timestamp.
 
 ## Project Structure
+```
+├── app
+|   ├── /public
+|   ├── /src
+|   ├── .gitignore
+│   ├── package-lock.json
+│   └── package.json
+├── agent.py
+├── config.py
+├── environment.yml
+├── metrics.py
+├── net.py
+├── server.py
+├── test.py
+├── train.py
+├── wrappers.py
+├── .gitignore
+└── README.md
+```
 
-**train.py**
-Training script that loops between the environment and the Mario agent.
+**app**
+Graphic User Interface (GUI) folder containing HTML, CSS and other assets.  
 
 **agent.py**
-Defines a `Mario` class that helps the agent collect experiences, make actions given observations and updates the action policy.
+Defines a `Mario` class that helps Mario collect experiences, make actions given observations and updates the action policy.
 
-**wrappers.py**
-Defines environment pre-processing logic, including observation resizing, rgb to grayscale, etc.
+**config.py**
+Define parameters for the training and evaluation of Mario.
+
+**environment.yml**
+Define packages/dependencies required for the environment to be installed and run.
+
+**metrics.py**
+Defines a `MetricLogger` class that helps track training/evaluation performance.
 
 **net.py**
 Define Q-value estimators with a Convolutional Neural Network.
 
-**metrics.py**
-Defines a `MetricLogger` class that helps track training/evaluation performance.
+**server.py**
+Flask server with endpoints for serving the GUI to run the training and evaluation scripts.
+
+**test.py**
+Evaluation script that loops between the environment and the trained Mario.
+
+**train.py**
+Training script that loops between the environment and Mario.
+
+**wrappers.py**
+Defines environment pre-processing logic, including observation resizing, rgb to grayscale, etc.
 
 ## Key Metrics
 
@@ -80,7 +114,7 @@ Make sure you have NPM installed
 2. Run `npm install`
 3. Run `npm start`
 4. Open a separate terminal and perform `python3 server.py`
-5. The GUI should be running at `localhost:3000` while the Server which interacts with the AI script is `localhost:5001`
+5. The GUI should be running at `localhost:3000` while the server which interacts with the AI scripts is `localhost:5001`
 
 ## Resources
 
