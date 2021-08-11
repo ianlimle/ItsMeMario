@@ -113,7 +113,7 @@ Make sure you have NPM installed
 1. Go into `app` folder
 2. Run `npm install`
 3. Run `npm start`
-4. Open a separate terminal and perform `python3 server.py`
+4. Open a separate terminal and perform `python server.py`
 5. The GUI should be running at `localhost:3000` while the server which interacts with the AI scripts is `localhost:5001`
 
 ## Resources
