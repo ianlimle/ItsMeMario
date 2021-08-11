@@ -101,7 +101,11 @@ class playGame(Resource):
             )
             return jsonify({"data": "Starting Mario game ...",
                         "error": None
-                        }), 201 
+                        }), 201
+        except AttributeError as err:
+            return jsonify({"data": None,
+                            "error": "Bad request: game cannot be played"
+                            }), 400
         except subprocess.CalledProcessError as err:
             return jsonify({"data": None,
                             "error": "CalledProcessError"
